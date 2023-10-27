@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <title>To-do List Website</title>
 </head>
+
 <body>
-    
+    <header>
+        <nav id="nav">
+            <p id="title">TO-DO LIST</p>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <section id="incomplete-tasks">
+            <div id="incomplete">INCOMPLETE</div>
+            <div id="incomplete-task-box">
+                <form class="task">
+                    <input type="checkbox" name="task-done" id="checkbox" value="task-done">
+                    <label for="checkbox">
+                        <input type=text placeholder="NEW TASK" id="task-1">
+                    </label>
+                    <a class="more-options"><img src="./src/SVG/more-vertical-svgrepo-com.svg" alt="see more" height="40em" width="25em"></a>
+                </form>
+            </div>
+        </section>
+
+        <section id="complete-tasks">
+            <div id="complete">COMPLETE</div>
+            <div id="complete-task-box">
+                <form>
+
+                </form>
+            </div>
+        </section>
+
+    </main>    
 </body>
 </html>
