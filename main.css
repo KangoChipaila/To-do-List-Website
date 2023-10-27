@@ -35,8 +35,12 @@ body{
 
 #add-task-button{
     position: absolute;
-    top: 10em;
-    left: 4em;
+    display: flex;
+    top: 12em;
+    left: 10em;
+    justify-content: center;
+    border-radius: 100em;
+    background-color: #3431DC;
 }
 
 #incomplete-tasks{
