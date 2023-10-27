@@ -27,9 +27,16 @@ body{
 
 #main{
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     margin: 6em 0;
+}
+
+#add-task-button{
+    position: absolute;
+    top: 10em;
+    left: 4em;
 }
 
 #incomplete-tasks{
