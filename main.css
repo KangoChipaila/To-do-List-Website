@@ -78,7 +78,7 @@ body{
     right: 1em;
 }
 
-.task{
+#task-0{
     margin: 0 0 0 0.8em;
     padding: 1.5em 0 1.5em 1em;
     border-bottom: 0.05em solid #000000;
@@ -120,7 +120,7 @@ body{
     left: 1em;
 }
 
-#task-1{
+#task-0-name{
     position: absolute;
     border: none;
     top: 2.5em;
