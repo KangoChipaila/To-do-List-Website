@@ -17,29 +17,43 @@
     <main id="main">
 
         <section id="incomplete-tasks">
-            <button type="button" id="add-task-button"><img src="./src/SVG/plus-large-svgrepo-com.svg" alt="add-task-button" height="55em" width="45em" id="plus-icon"></button>
+            <button type="button" onclick=newDiv() id="add-task-button"><img src="./src/SVG/plus-large-svgrepo-com.svg" alt="add-task-button" height="55em" width="45em" id="plus-icon"></button>
             <div id="incomplete">INCOMPLETE</div>
 
-            <div id="incomplete-task-box">
-                <form id="task-0">
-                    <input type="checkbox" name="task-done" id="checkbox" value="task-done">
-                    <label for="checkbox">
-                        <input type=text placeholder="NEW TASK" id="task-0-name">
-                    </label>
-                    <a class="more-options"><img src="./src/SVG/more-vertical-svgrepo-com.svg" alt="see more" height="40em" width="25em"></a>
-                </form>
-            </div>
+            <ul id="incomplete-task-box">
+                
+            </ul>
         </section>
 
         <section id="complete-tasks">
             <div id="complete">COMPLETE</div>
-            <div id="complete-task-box">
-                <form>
-
-                </form>
-            </div>
+            <ul id="complete-task-box">
+            
+            </ul>
         </section>
 
     </main>    
+    <script>
+        let itemNum = 0;
+        function newDiv(){
+            iNum = itemNum.toString();
+            let id = 'task-' + iNum;
+
+            const g = document.createElement('input');
+            g.setAttribute('id', id);
+            g.setAttribute('placeholder', 'NEW TASK');
+            const list = document.getElementById('incomplete-task-box');
+            list.insertBefore(g, list.childNodes[0]);
+
+            const f = document.getElementById(id);
+            f.style.margin = '0 0 0 -2em';
+            f.style.padding = '1.5em 0 1.5em 1em';
+            f.style.borderBottom = '0.05em solid #000000';
+            f.style.width = '102%';
+           
+
+            itemNum++;
+        }
+    </script>
 </body>
 </html>
