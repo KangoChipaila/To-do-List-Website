@@ -21,11 +21,12 @@ let itemNum = 0;
             taskCheckbox.setAttribute('id', taskCheckboxID);
             taskCheckbox.setAttribute('class', 'task-checkbox');
             
+            //Custom checkbox
             const div = document.getElementById(taskBoxId);
             div.insertBefore(taskCheckbox, div.childNodes[0]);
 
             const checkBoxCover = document.createElement('div');
-            checkBoxCover.setAttribute('class', 'checkmark');
+            checkBoxCover.setAttribute('class', 'custom-checkbox');
 
             div.appendChild(checkBoxCover);
             
@@ -44,7 +45,7 @@ let itemNum = 0;
                     listTwo.insertBefore(taskBox, listTwo.childNodes[0]);
                     checked = true;
                 }
-            };
+            }
 
             //Build task name field and add it to div
             const taskName = document.createElement('input');
@@ -53,8 +54,20 @@ let itemNum = 0;
             taskName.setAttribute('type', 'text');
             taskName.setAttribute('placeholder', 'NEW TASK');
             taskName.setAttribute('maxlength', '20');
+            taskName.setAttribute('readonly', 'true');
 
             div.appendChild(taskName);
+
+            //Allows user to name task on double click
+            const tskName = document.getElementById(taskNameId);
+            tskName.ondblclick = () => {
+                tskName.removeAttribute('readonly');
+            }
+            tskName.onkeydown = (e) => {
+                if(e.key == 'Enter'){
+                    tskName.setAttribute('readonly', 'true');
+                }
+            }
 
             //Build task delete option and add it to div
             const deleteTask = document.createElement('button');
