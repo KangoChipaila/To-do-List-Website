@@ -153,10 +153,17 @@ body{
     left: 1em;
 }
 
-.more-options{
+.delete-task{
     position: absolute;
+    margin: 1em 0 0 0;
     right: 2em;
-    height: 9%;
+    height: 0.5em;
     width: 2em;
-    border: none #000000;
+    background-color: #D71212;
+    border-radius: 2em;
+    border: none;
+}
+
+.delete-task:hover{
+    background-color: #FF0000;
 }

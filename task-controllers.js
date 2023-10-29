@@ -1,9 +1,11 @@
 let itemNum = 0;
         function newTask(){
             iNum = itemNum.toString();
+
             let taskBoxId = 'task-box-' + iNum;
             let taskCheckboxID = 'task-' + iNum + '-checkbox';
             let taskNameId = 'task-' + iNum + '-name';
+            let taskDeleteId = 'task-' + iNum + '-delete';
 
             //Build div to hold task checkbox, task name and task ellipse
             const taskBox = document.createElement('div');
@@ -22,7 +24,7 @@ let itemNum = 0;
             const div = document.getElementById(taskBoxId);
             div.insertBefore(taskCheckbox, div.childNodes[0]);
             
-            //Send checked task to complete task field
+            //Send checked task to complete task field or send unchecked task back to incomplete task field
             let checked = false;
             const taskCB = document.getElementById(taskCheckboxID);
             taskCB.onclick = () => {
@@ -49,13 +51,19 @@ let itemNum = 0;
 
             div.appendChild(taskName);
 
-            //Build task ellipse and add it to div
-            const options = document.createElement('img');
-            options.setAttribute('class', 'more-options');
-            options.setAttribute('src', './src/SVG/more-vertical-svgrepo-com.svg');
-            options.setAttribute('alt', 'more-options');
+            //Build task delet option and add it to div
+            const deleteTask = document.createElement('button');
+            deleteTask.setAttribute('id', taskDeleteId);
+            deleteTask.setAttribute('class', 'delete-task');
+            deleteTask.setAttribute('type', 'button');
 
-            div.appendChild(options);
+            div.appendChild(deleteTask);
+
+            let delTask = document.getElementById(taskDeleteId);
+            delTask.onclick = () => {
+                let taskToDelete = document.getElementById(taskBoxId);
+                taskToDelete.remove();
+            };
 
             itemNum++;
         }
