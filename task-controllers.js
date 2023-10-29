@@ -23,6 +23,11 @@ let itemNum = 0;
             
             const div = document.getElementById(taskBoxId);
             div.insertBefore(taskCheckbox, div.childNodes[0]);
+
+            const checkBoxCover = document.createElement('div');
+            checkBoxCover.setAttribute('class', 'checkmark');
+
+            div.appendChild(checkBoxCover);
             
             //Send checked task to complete task field or send unchecked task back to incomplete task field
             let checked = false;
@@ -51,7 +56,7 @@ let itemNum = 0;
 
             div.appendChild(taskName);
 
-            //Build task delet option and add it to div
+            //Build task delete option and add it to div
             const deleteTask = document.createElement('button');
             deleteTask.setAttribute('id', taskDeleteId);
             deleteTask.setAttribute('class', 'delete-task');
@@ -59,6 +64,7 @@ let itemNum = 0;
 
             div.appendChild(deleteTask);
 
+            //Functionality to delete tasks
             let delTask = document.getElementById(taskDeleteId);
             delTask.onclick = () => {
                 let taskToDelete = document.getElementById(taskBoxId);

@@ -104,12 +104,33 @@ body{
 }
 
 .task-checkbox{
-    margin: 0 0 0 2em;
+    margin: 0 1em 0 2em;
     padding: 0 0 0 0;
     height: 2.5em;
     width: 2.5em;
+    opacity: 0%;
 }
 
+.checkmark{
+    position: absolute;
+    left: 1.9em;
+    background-color: #FFFFFF;
+    border: 0.09em solid #000000;
+    border-radius: 0.5em;
+    margin: -2.5em 0 0 0;
+    height: 2em;
+    width: 2em;
+    z-index: -1;
+}
+
+.task-checkbox:checked ~ .checkmark{
+    background-image: url(./src/SVG/check-svgrepo-com.svg);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 2em; 
+    padding: 0 0 0 0.2em;
+}
 .task-name{
     position: absolute;
     padding: 0.3em 0 0 2.5em;
