@@ -40,11 +40,21 @@ let itemNum = 0;
                 if (checked === true){
                     const list = document.getElementById('incomplete-task-box');
                     list.insertBefore(taskBox, list.childNodes[0]);
+
+                    //Hide edit and delete options if they are open during checkbox marking
+                    edTask.style.display = "none";
+                    delTask.style.display = "none";
+
                     checked = false;
                 }
                 else{
                     const listTwo = document.getElementById('complete-task-box');
                     listTwo.insertBefore(taskBox, listTwo.childNodes[0]);
+
+                    //Hide edit and delete options if they are open during checkbox marking
+                    edTask.style.display = "none";
+                    delTask.style.display = "none";
+
                     checked = true;
                 }
             }
@@ -66,6 +76,8 @@ let itemNum = 0;
             tskName.ondblclick = () => {
                 tskName.removeAttribute('readonly');
             }
+
+            //Prevents user from editing name upon pressing the "Enter" key
             tskName.onkeydown = (e) => {
                 if(e.key == 'Enter'){
                     tskName.setAttribute('readonly', 'true');
@@ -105,11 +117,19 @@ let itemNum = 0;
 
             div.appendChild(editTask);
 
-            //Functionality to edit tasks
+            //Functionality to allow editing of task name
             const edTask = document.getElementById(taskEditId);
             edTask.onclick = () => {
+                //Allow task name to be edited
                 let taskToEdit = document.getElementById(taskNameId);
                 taskToEdit.removeAttribute('readonly');
+                taskToEdit.focus();
+              
+                
+                //Hide edit and delete options
+                edTask.style.display = "none";
+                delTask.style.display = "none";
+
             }
 
             //Build task delete option and add it to div
