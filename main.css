@@ -175,17 +175,52 @@ body{
     left: 1em;
 }
 
-.delete-task{
+.options{
     position: absolute;
-    margin: 1em 0 0 0;
-    right: 2em;
-    height: 0.5em;
-    width: 2em;
-    background-color: #D71212;
-    border-radius: 2em;
+    right: 1em;
+    height: 3em;
+    width: 3em;
+    background-image: url(./src/SVG/more-vertical-svgrepo-com.svg);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
     border: none;
+    z-index: 0;
 }
 
-.delete-task:hover{
-    background-color: #FF0000;
+.edit-task{
+    position: absolute;
+    display: none;
+    background-image: url(./src/SVG/edit-3-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    background-position: center;
+    margin: -0.5em 0 0 0;
+    right: 0em;
+    height: 3em;
+    width: 2.7em;
+    background-color: #FFFFFF;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 0 5px 7px #aaa9a9;
+    z-index: 1;
+}
+
+.delete-task{
+    position: absolute;
+    display: none;
+    background-image: url(./src/SVG/delete-2-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: 2em;
+    background-position: center;
+    margin: 2em 0 0 0;
+    right: 0em;
+    height: 3em;
+    width: 2.7em;
+    background-color: #FFFFFF;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 0 5px 7px #aaa9a9;
+    z-index: 1;
 }

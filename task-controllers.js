@@ -1,10 +1,12 @@
 let itemNum = 0;
         function newTask(){
-            iNum = itemNum.toString();
+            let iNum = itemNum.toString();
 
             let taskBoxId = 'task-box-' + iNum;
             let taskCheckboxID = 'task-' + iNum + '-checkbox';
             let taskNameId = 'task-' + iNum + '-name';
+            let moreOptionsId = 'task-' + iNum + '-options';
+            let taskEditId = 'task-' + iNum + '-edit';
             let taskDeleteId = 'task-' + iNum + '-delete';
 
             //Build div to hold task checkbox, task name and task ellipse
@@ -68,6 +70,46 @@ let itemNum = 0;
                 if(e.key == 'Enter'){
                     tskName.setAttribute('readonly', 'true');
                 }
+            }
+
+            //Build more options button
+            const moreOptions = document.createElement('button');
+            moreOptions.setAttribute('id', moreOptionsId);
+            moreOptions.setAttribute('type', 'button');
+            moreOptions.setAttribute('class', 'options');
+
+            div.appendChild(moreOptions);
+
+            //Display more options
+            const mrOptions = document.getElementById(moreOptionsId);
+            let optionsClicked = false;
+
+            mrOptions.onclick = () => {
+                if(optionsClicked === false)
+                {
+                    delTask.style.display = "block";
+                    edTask.style.display = "block";
+                    optionsClicked = true;
+                }
+                else{
+                    delTask.style.display = "none";
+                    edTask.style.display = "none";
+                    optionsClicked = false;
+                }
+            }
+            //Build task edit option and add it to div
+            const editTask = document.createElement('button');
+            editTask.setAttribute('id', taskEditId);
+            editTask.setAttribute('class', 'edit-task');
+            editTask.setAttribute('type', 'button');
+
+            div.appendChild(editTask);
+
+            //Functionality to edit tasks
+            const edTask = document.getElementById(taskEditId);
+            edTask.onclick = () => {
+                let taskToEdit = document.getElementById(taskNameId);
+                taskToEdit.removeAttribute('readonly');
             }
 
             //Build task delete option and add it to div
