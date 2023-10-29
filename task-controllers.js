@@ -23,10 +23,20 @@ let itemNum = 0;
             div.insertBefore(taskCheckbox, div.childNodes[0]);
             
             //Send checked task to complete task field
+            let checked = false;
             const taskCB = document.getElementById(taskCheckboxID);
             taskCB.onclick = () => {
-                const listTwo = document.getElementById('complete-task-box');
-                listTwo.insertBefore(taskBox, listTwo.childNodes[0]);
+
+                if (checked === true){
+                    const list = document.getElementById('incomplete-task-box');
+                    list.insertBefore(taskBox, list.childNodes[0]);
+                    checked = false;
+                }
+                else{
+                    const listTwo = document.getElementById('complete-task-box');
+                    listTwo.insertBefore(taskBox, listTwo.childNodes[0]);
+                    checked = true;
+                }
             };
 
             //Build task name field and add it to div
