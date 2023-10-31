@@ -105,8 +105,9 @@ body{
 
 .task-box{
     margin: 1em 0 0 -2em;
-    padding: 1em 0 0.75em 0;
+    padding: 1em 0 0.4em 0;
     width: 107%;
+    height: 1.8em;
     border-bottom: 0.05em solid #B1B1B1;
     border-top: 0;
     border-left: 0;
@@ -114,10 +115,10 @@ body{
 }
 
 .task-checkbox{
-    margin: 0 1em 0 2em;
+    margin: -0.4em 1em 0 1.7em;
     padding: 0 0 0 0;
-    height: 2.5em;
-    width: 2.5em;
+    height: 2em;
+    width: 1.8em;
     opacity: 0%;
 }
 
@@ -127,19 +128,20 @@ body{
     background-color: #FFFFFF;
     border: 0.1em solid #000000;
     border-radius: 0.3em;
-    margin: -2.65em 0 0 0;
-    height: 1.7em;
-    width: 1.8em;
+    margin: -1.8em 0 0 0;
+    height: 1.2em;
+    width: 1.3em;
     z-index: -1;
 }
 
 .task-checkbox:checked ~ .custom-checkbox{
     background-image: url(./src/SVG/check-svgrepo-com.svg);
-    background-size: 2em;
+    background-size: 1.3em;
     background-repeat: no-repeat;
     background-position: center;
-    height: 2em; 
-    padding: 0 0 0 0.2em;
+    height: 1.2em;
+    width: 1.3em;
+    padding: 0 0 0 0;
 }
 
 .task-name{
@@ -147,11 +149,11 @@ body{
     margin: -0.2em 1em 2em 0;
     padding: 0.3em 0 0.3em -1em;
     font-family: 'Inter';
-    font-size: 1.3em;
-    font-weight: 500;
+    font-size: 1.1em;
+    font-weight: 400;
     text-align: center;
     border: none;
-    width: 11.5em;
+    width: 15.5em;
 }
 
 .task-name:focus{
@@ -214,9 +216,9 @@ body{
     display: none;
     background-image: url(./src/SVG/edit-3-svgrepo-com.svg);
     background-repeat: no-repeat;
-    background-size: 1.8em;
+    background-size: 1.6em;
     background-position: center;
-    margin: -1.4em 0 0 0;
+    margin: -0.5em 0 0 0;
     right: 0.1em;
     height: 3em;
     width: 2.7em;
@@ -232,9 +234,9 @@ body{
     display: none;
     background-image: url(./src/SVG/delete-2-svgrepo-com.svg);
     background-repeat: no-repeat;
-    background-size: 2em;
+    background-size: 1.8em;
     background-position: center;
-    margin: 1.55em 0 0 0;
+    margin: 2.5em 0 0 0;
     right: 0.1em;
     height: 3em;
     width: 2.7em;
