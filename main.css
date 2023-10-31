@@ -10,6 +10,11 @@ body{
     src: url(./src/Fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
+
 #nav{
     position: fixed;
     margin: 0 0;
