@@ -65,7 +65,7 @@ let itemNum = 0;
             taskName.setAttribute('class', 'task-name');
             taskName.setAttribute('type', 'text');
             taskName.setAttribute('placeholder', 'NEW TASK');
-            taskName.setAttribute('maxlength', '20');
+            taskName.setAttribute('maxlength', '24');
             taskName.setAttribute('readonly', 'true');
             taskName.setAttribute('title', 'Double click to edit task name. Press "Enter" key to save.');
 
